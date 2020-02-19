@@ -18,6 +18,21 @@
     <script src="js/angular.min.js"></script>
 	<!--导入jquery-->
 	<script src="js/jquery-3.3.1.js"></script>
+
+	<script>
+		$(function () {
+			$("#btn_sub").click(function () {
+				$.post("loginServlet",$("#loginForm").serialize(),
+				function (data) {
+					if (data.flag){
+						location.href = "index.html";
+					} else {
+						$("#errorMsg").html(data.errorMsg);
+					}
+				});
+			});
+		});
+	</script>
 </head>
 
 <body>
@@ -52,7 +67,7 @@
 					</script>
 			</div>
 			<div class="submit_btn">
-        				<button type="button">登录</button>
+        				<button type="button" id="btn_sub">登录</button>
         				<div class="auto_login">
         					<input type="checkbox" name="" class="checkbox">
         					<span>自动登录</span>
