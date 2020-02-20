@@ -117,7 +117,7 @@
                 if (checkUsername() && checkPassword()
                     && checkEmail() && checkName()
                     && checkTelephone() && checkBirthday()) {
-                    $.post("registerUserServlet",
+                    $.post("user/register",
                         $("#registerForm").serialize(),
                         function (data) {
                             if (data.flag){

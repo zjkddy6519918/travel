@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
         user.setStatus("N");
         dao.save(user);
 
-        String content = "<a href='http://localhost/travel/activateUserServlet?code="+user.getCode()+"'>点击激活</a>";
+        String content = "<a href='http://localhost/travel/user/activate?code="+user.getCode()+"'>点击激活</a>";
         new Thread(() -> MailUtils.sendMail(user.getEmail(), content, "激活邮件")).start();
         return true;
     }
