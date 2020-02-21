@@ -9,4 +9,6 @@ public interface RouteDao {
     List<Route> pageQuery(int cid, int start, int pageSize, String rname);
 
     int findTotalCount(int cid, String rname);
+
+    Route findOne(int rid);
 }
